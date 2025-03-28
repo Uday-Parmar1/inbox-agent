@@ -86,7 +86,7 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-100 via-purple-50 to-blue-100 dark:from-primary-dark dark:via-secondary-dark dark:to-primary-dark flex items-center justify-center p-4 sm:p-6 lg:p-8">
       <motion.div 
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -107,11 +107,11 @@ const Login = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
-            className="mt-6 text-center text-3xl font-extrabold text-gray-900"
+            className="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-primary-light"
           >
             {isLogin ? 'Sign in to your account' : 'Create a new account'}
           </motion.h2>
-          <p className="mt-2 text-center text-sm text-gray-600">
+          <p className="mt-2 text-center text-sm text-gray-600 dark:text-secondary-light">
             Your AI-powered job application tracker
           </p>
         </div>
@@ -120,7 +120,7 @@ const Login = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.5 }}
-          className="mt-8 bg-white py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10"
+          className="mt-8 bg-white dark:bg-primary-dark py-8 px-4 shadow-2xl sm:rounded-lg sm:px-10"
         >
           <form className="space-y-6" onSubmit={handleSubmit}>
             {!isLogin && (
@@ -173,7 +173,7 @@ const Login = () => {
             {isLogin && (
               <div className="flex items-center justify-end">
                 <div className="text-sm">
-                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500">
+                  <a href="#" className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-accent-light dark:hover:text-accent-light/80">
                     Forgot your password?
                   </a>
                 </div>
@@ -185,7 +185,7 @@ const Login = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               disabled={loading}
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-primary-dark disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -201,10 +201,10 @@ const Login = () => {
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-gray-300 dark:border-primary-dark" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Or continue with</span>
+                <span className="px-2 bg-white dark:bg-primary-dark text-gray-500 dark:text-secondary-light">Or continue with</span>
               </div>
             </div>
 
@@ -214,7 +214,7 @@ const Login = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleGoogleLogin}
                 disabled={loading}
-                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-primary-dark rounded-md shadow-sm bg-white dark:bg-secondary-dark text-sm font-medium text-gray-500 dark:text-secondary-light hover:bg-gray-50 dark:hover:bg-accent-dark"
               >
                 <FcGoogle className="h-5 w-5" />
                 <span className="ml-2">Google</span>
@@ -225,7 +225,7 @@ const Login = () => {
                 whileTap={{ scale: 0.95 }}
                 onClick={handleMicrosoftLogin}
                 disabled={loading}
-                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm bg-white text-sm font-medium text-gray-500 hover:bg-gray-50"
+                className="w-full inline-flex justify-center py-2 px-4 border border-gray-300 dark:border-primary-dark rounded-md shadow-sm bg-white dark:bg-secondary-dark text-sm font-medium text-gray-500 dark:text-secondary-light hover:bg-gray-50 dark:hover:bg-accent-dark"
               >
                 <BsMicrosoft className="h-5 w-5 text-blue-500" />
                 <span className="ml-2">Microsoft</span>
@@ -238,7 +238,7 @@ const Login = () => {
               type="button"
               onClick={toggleMode}
               whileHover={{ scale: 1.05 }}
-              className="font-medium text-indigo-600 hover:text-indigo-500"
+              className="font-medium text-indigo-600 hover:text-indigo-500 dark:text-accent-light dark:hover:text-accent-light/80"
             >
               {isLogin ? "Don't have an account? Sign up" : "Already have an account? Login"}
             </motion.button>
